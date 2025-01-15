@@ -1,7 +1,7 @@
 # Repository `gguf`: loads GGUF weights into GX structures
 
 Repository `gguf` implements a loader to fill GX structures with a `gguf`
-huggingface format.
+format.
 
 ## Disclaimer
 

@@ -18,13 +18,14 @@ package gguf
 import (
 	"bytes"
 	"io"
+	"maps"
+	"slices"
 	"strconv"
 	"strings"
 	"unsafe"
 
 	"github.com/pkg/errors"
-	"golang.org/x/exp/maps"
-	"github.com/gx-org/backend/platform"
+	"github.com/gx-org/gx/api"
 	"github.com/gx-org/gx/golang/binder/gobindings/types"
 	"github.com/gx-org/gx/golang/encoding"
 )
@@ -105,7 +106,7 @@ func keys(set []keyValue) []string {
 		}
 		keys[first] = true
 	}
-	return maps.Keys(keys)
+	return slices.Collect(maps.Keys(keys))
 }
 
 func (w walkerStruct) Field(name string) (encoding.Data, error) {
@@ -200,7 +201,7 @@ func (w walkerData) ValueFuture() (encoding.ValueFuture, error) {
 }
 
 // UnmarshalOnDevice populates a GX structure from GGUF readers.
-func UnmarshalOnDevice(dev platform.Device, target types.Bridger, readers Readers) error {
+func UnmarshalOnDevice(dev *api.Device, target types.Bridger, readers Readers) error {
 	w := walkerData{}
 	for _, info := range readers.Tensors() {
 		w.set = append(w.set, keyValue{
