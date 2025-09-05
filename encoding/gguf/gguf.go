@@ -25,6 +25,7 @@ import (
 	"unsafe"
 
 	"github.com/pkg/errors"
+	"github.com/abrander/gguf"
 	"github.com/gx-org/gx/api"
 	"github.com/gx-org/gx/golang/binder/gobindings/types"
 	"github.com/gx-org/gx/golang/encoding"
@@ -49,6 +50,9 @@ type (
 
 		// Dimensions of the tensor.
 		Dimensions() []uint64
+
+		// Type returns the tensor's GGML type ID.
+		Type() gguf.GGML
 	}
 
 	keyValue struct {
@@ -159,6 +163,10 @@ type arrayFuture struct {
 
 func (pr arrayFuture) Value() (types.ArrayBridge, error) {
 	tensor := pr.kv.info
+	if tensor.Type() != gguf.GgmlFloat32 {
+		return nil, errors.Errorf("GGML type %s (%d) unuspported", tensor.Type(), tensor.Type())
+	}
+
 	r, err := tensor.Reader()
 	if err != nil {
 		return nil, err

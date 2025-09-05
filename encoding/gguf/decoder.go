@@ -39,7 +39,7 @@ type (
 	}
 )
 
-// ToReaders returns a gguff decoder from a gguf reader.
+// ToReaders returns a gguf decoder from a gguf reader.
 func ToReaders(reader *gguf.Reader) Readers {
 	dec := &decoder{
 		reader:  reader,
@@ -85,6 +85,11 @@ func (ti *tensorInfo) Size() int64 {
 // Dimensions of the tensor.
 func (ti *tensorInfo) Dimensions() []uint64 {
 	return ti.ti.Dimensions
+}
+
+// Type returns the tensor's GGML type ID.
+func (ti *tensorInfo) Type() gguf.GGML {
+	return ti.ti.Type
 }
 
 // Close the reader and unlock the decoder so that other readers can be created.
