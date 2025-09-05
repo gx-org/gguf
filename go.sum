@@ -4,8 +4,12 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gx-org/backend v0.0.0-20250128092536-8a1426e2509c h1:fTaR9XUbqRZ6BUtA+KKBcLF6DDrSj83jjAlzDg+LzuE=
 github.com/gx-org/backend v0.0.0-20250128092536-8a1426e2509c/go.mod h1:jKahO9DlgjDBaGV77y/ygQJnfhM6f2zJmFfiV5x52I4=
+github.com/gx-org/backend v0.3.0 h1:mOrwcJ+CaULmnRrrD3aqBo4lxl6BYX2T+alFcMjNkQI=
+github.com/gx-org/backend v0.3.0/go.mod h1:7/vxVrdZy+XCB2lXO+rCAhHrYlx3Byi6fivxAPVtRUE=
 github.com/gx-org/gx v0.0.0-20250128153514-d021bb28e382 h1:DI/bHRyhwXFt7w/ZiJ/abkWBIzxXfDpn2OH4qM7pLIE=
 github.com/gx-org/gx v0.0.0-20250128153514-d021bb28e382/go.mod h1:D4enDl3CRySY8GdZMuTmEa7RiFM4YKlpa50us4r9LIA=
+github.com/gx-org/gx v0.6.1 h1:Io+9HMvj2ehnTO8Moy1/9CNtMceYXg+bTLLUv3/8u4g=
+github.com/gx-org/gx v0.6.1/go.mod h1:ipmISLtb4u3KkWWC4s21zSu4EZsfB04KhPetUZSx4zQ=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
