@@ -39,14 +39,12 @@ jobs:
     - name: Setup an identity
       run: git config user.email "noreply@github.com" && git config user.name "Github Action"
 
+    - name: Move to the latest version
+      run: |
+        go get github.com/gx-org/gx@main
+
     - name: Tidy
       run: go mod tidy || true
-
-    - name: Update all the dependencies to the latest release
-      run: |
-        export DEPS=$(go list -m -u all | grep "gx-org" | grep "\[v")
-        [ "$DEPS" != "" ] && go list -m -u all | grep "gx-org" | grep "\[v" | awk '{print $1}' | xargs -n 1 go get -u
-        go mod tidy
 
     - name: Build
       run: |
