@@ -78,14 +78,6 @@ func (kv *keyValue) child(name string) keyValue {
 	}
 }
 
-func (kv *keyValue) fullPath() string {
-	full := ""
-	if kv.parent != nil {
-		full = kv.parent.fullPath()
-	}
-	return full + kv.name
-}
-
 func selectChildren(set []keyValue, name string) []keyValue {
 	children := []keyValue{}
 	for _, kv := range set {
